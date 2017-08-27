@@ -1,18 +1,42 @@
-# MarvelCovers
+# Marvel Cover
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.3.
 
-## Development server
+## Face Front True Believer!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Welcome to the Mighty Marvel Random Cover Generator!
+This project uses the fantastic [Marvel API](https://developer.marvel.com/) to return a random selection of comic book covers. 
+Excelsior!
 
-## Code scaffolding
+## User Stories
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+```
+As a comics fan,
+So I can appreciate some art,
+I'd like to view some comics covers.
 
-## Build
+As a comics fan,
+So I can find out more about comics,
+I'd like to view information about the comics.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+As a comics fan,
+So I can see some art variants,
+I'd like to be able to view variant covers.
+
+As a comics fan,
+So I can find a series of images,
+I'd like to view by series.
+
+As a comics fan, 
+So I can see similar artwork,
+I'd like to be able to view by Artist.
+
+As a comics fan,
+So I can see my favourite comic cover,
+I'd like to search by comic. 
+
+Nuff Said!
+```
 
 ## Running unit tests
 
