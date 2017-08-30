@@ -13,7 +13,11 @@ Excelsior!
 ```
 As a comics fan,
 So I can appreciate some art,
-I'd like to view some comics covers.
+I'd like to view a comic cover.
+
+As a comics fan, 
+So I can appreciate a lot of art,
+I'd like to view lots of comic covers.
 
 As a comics fan,
 So I can find out more about comics,
