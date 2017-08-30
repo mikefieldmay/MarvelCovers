@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ComicComponent } from './comic/comic.component';
 import { ComicListComponent } from './comic/comic-list/comic-list.component';
+import { DataService } from 'app/comic/data-service.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { ComicListComponent } from './comic/comic-list/comic-list.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
