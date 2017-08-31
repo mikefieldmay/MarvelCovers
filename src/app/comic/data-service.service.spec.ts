@@ -28,10 +28,12 @@ describe('Data Service', () => {
       'path': 'imagePath'
     }]};
   let data = {
-    'results': [
-      comicOne,
-      comicTwo
+      data: {
+      'results': [
+        comicOne,
+        comicTwo
     ]
+  }
   };
 
   beforeEach(() => {

@@ -13,17 +13,18 @@ export class DataService {
   getComics() {
     const url = 'https://gateway.marvel.com:443/v1/public/comics';
     const params = '?noVariants=true&limit=10&';
-   return this._http.get(url + params + ApiKeys.public)
+   return this._http.get(url + params + '&apikey=' + ApiKeys.public)
       .map(
         (response: Response) => {
-          const comics = response.json().results;
+          const comics = response.json().data.results;
+          console.log(comics)
           for (let comic of comics) {
             this.comics.push(
               new Comic(comic.title, `${comic.images[0]}/detail.jpg`)
             );
           }
-          return this.comics;
-        }
+          return this.comics.slice();
+        },
       );
   }
 }
