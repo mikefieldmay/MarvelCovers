@@ -63,18 +63,18 @@ describe('Data Service', () => {
     }));
 
     it('should set comics to the returned comics',
-    inject([DataService, XHRBackend], (dataService, mockBackend) => {
+      inject([DataService, XHRBackend], (dataService, mockBackend) => {
 
-    mockBackend.connections.subscribe((connection) => {
-      connection.mockRespond(new Response(new ResponseOptions({
-        body: JSON.stringify(data)
-      })));
-    });
+      mockBackend.connections.subscribe((connection) => {
+        connection.mockRespond(new Response(new ResponseOptions({
+          body: JSON.stringify(data)
+        })));
+      });
 
-    dataService.getComics().subscribe((response: Response) => {
-      expect(dataService.comics.length).toBe(2);
-    });
+      dataService.getComics().subscribe((response: Response) => {
+        expect(dataService.comics.length).toBe(2);
+      });
 
-  }));
+    }));
   });
 });
