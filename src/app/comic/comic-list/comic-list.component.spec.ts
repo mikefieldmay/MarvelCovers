@@ -13,7 +13,7 @@ let comic = {
 
 class DataServiceStub {
   getComics() {
-    return Observable.from([comic])
+    return Observable.from([[comic]])
   }
 };
 
@@ -42,8 +42,13 @@ describe('ComicListComponent', () => {
   });
 
   it('should hold an array of comics', () => {
-    expect(component.comics).toEqual(comic);
-  })
+    expect(component.comics).toEqual([comic]);
+  });
+
+  it('should render display comics returned from the server', async(() => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h1').textContent).toContain('Awesome Comic');
+  }));
 
   describe('onInit', () => {
 
