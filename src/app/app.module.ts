@@ -8,13 +8,15 @@ import { ComicComponent } from './comic/comic.component';
 import { ComicListComponent } from './comic/comic-list/comic-list.component';
 import { DataService } from 'app/comic/data-service.service';
 import { ComicItemComponent } from './comic/comic-list/comic-item/comic-item.component';
+import { ShortenPipe } from './common/shorten.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ComicComponent,
     ComicListComponent,
-    ComicItemComponent
+    ComicItemComponent,
+    ShortenPipe
   ],
   imports: [
     BrowserModule,
