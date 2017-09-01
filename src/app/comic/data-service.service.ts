@@ -16,8 +16,7 @@ export class DataService {
    return this._http.get(url + params + '&apikey=' + ApiKeys.public)
       .map(
         (response: Response) => {
-          const comics = response.json().data.results;
-          console.log(comics)
+          let comics = response.json().data.results;
           for (let comic of comics) {
             if (comic.images.length > 0 ) {
               this.comics.push(
