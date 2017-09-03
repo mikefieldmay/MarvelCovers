@@ -48,11 +48,6 @@ describe('ComicListComponent', () => {
     expect(component.comics).toEqual([comic]);
   });
 
-  it('should render display comics returned from the server', async(() => {
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('img')).toBeTruthy();
-  }));
-
   describe('onInit', () => {
 
     it('should subscribe to the DataService', () => {

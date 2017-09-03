@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from "app/comic/data-service.service";
-import { Comic } from "app/comic/comic.model";
+import { DataService } from 'app/comic/data-service.service';
+import { Comic } from 'app/comic/comic.model';
 
 @Component({
   selector: 'app-comic-list',
