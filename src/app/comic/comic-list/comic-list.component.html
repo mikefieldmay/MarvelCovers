@@ -1,11 +1,10 @@
-<section id="work">
-  <div *ngFor="let comic of comics">
-    <div class="col-md-6">
-      <div class="card">
-        <div class="work-img">
-          <img class="card-img-top img-fluid" [src]="comic.imageUrl">
-        </div>
+<div *ngFor="let comic of comics">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="work-img">
+        <img class="card-img-top img-fluid" [src]="comic.imageUrl">
+        <h2>{{comic.title}}</h2>
       </div>
     </div>
   </div>
-</section>
+</div>

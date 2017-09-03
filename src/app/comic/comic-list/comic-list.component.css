@@ -12,9 +12,21 @@
 }
 
 img {
-  width: 100%
+
+  width: 90%
 }
 
+.work-img {
+  position: relative;
+}
+
+h2 {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  width: 100%;
+  color: white;
+}
 
 
 /* Need to work out media queries for 990 - 1125 work out padding below these */

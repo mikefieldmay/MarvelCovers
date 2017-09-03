@@ -48,9 +48,9 @@ describe('ComicListComponent', () => {
     expect(component.comics).toEqual([comic]);
   });
 
-  xit('should render display comics returned from the server', async(() => {
+  it('should render display comics returned from the server', async(() => {
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('img').source).toContain('Awesome Comic');
+    expect(compiled.querySelector('img')).toBeTruthy();
   }));
 
   describe('onInit', () => {
