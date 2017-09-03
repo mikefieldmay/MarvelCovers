@@ -2,8 +2,11 @@
   <div class="work-img"
     on-mouseover='onMouseEnter()'
     on-mouseleave='onMouseLeave()'>
-    <img class="card-img-top img-fluid" [src]="comic.imageUrl">
-    <h2>{{comic.title}}</h2>
+    <img class="card-img-top img-fluid"
+      [src]="comic.imageUrl">
+    <div *ngIf="hover === true">
+      <h2>{{comic.title}}</h2>
+    </div>
   </div>
 </div>
 

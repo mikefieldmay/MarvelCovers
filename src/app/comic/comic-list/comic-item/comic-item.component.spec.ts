@@ -45,8 +45,6 @@ describe('ComicItemComponent', () => {
 
   });
 
-
-
   describe('onMouseEnter', () => {
 
     xit('onMouseEnter is called when a mouse hovers over element', () => {
@@ -70,25 +68,40 @@ describe('ComicItemComponent', () => {
 
   describe('onMouseLeave', () => {
 
-        xit('onMouseLeave is called when a mouse leaves the element', () => {
-          let element = fixture.nativeElement;
-          let component = fixture.debugElement.children[0].componentInstance;
-          let spy = spyOn(component, 'onMouseLeave');
-          let imgEl = element.querySelector('.work-img');
-          let event = new Event('mouseleave');
-          imgEl.dispatchEvent(event);
-          expect(spy).toHaveBeenCalled();
+    xit('onMouseLeave is called when a mouse leaves the element', () => {
+      let element = fixture.nativeElement;
+      let component = fixture.debugElement.children[0].componentInstance;
+      let spy = spyOn(component, 'onMouseLeave');
+      let imgEl = element.querySelector('.work-img');
+      let event = new Event('mouseleave');
+      imgEl.dispatchEvent(event);
+      expect(spy).toHaveBeenCalled();
 
-        });
+    });
 
-        it('returns the hover state to false when the mouse leaves', () => {
-          let component = fixture.debugElement.children[0].componentInstance;
-          component.onMouseEnter();
-          component.onMouseLeave();
-          expect(component.hover).toEqual(false);
-        });
+    it('returns the hover state to false when the mouse leaves', () => {
+      let component = fixture.debugElement.children[0].componentInstance;
+      component.onMouseEnter();
+      component.onMouseLeave();
+      expect(component.hover).toEqual(false);
+    });
 
-      });
+  });
+
+  describe('hoverState', () => {
+
+    it('the title is displayed when the image is in hover state', () => {
+        const compiled = fixture.debugElement.nativeElement;
+        component.hover = true;
+        fixture.detectChanges();
+        expect(compiled.querySelector('h2')).toBeTruthy();
+    });
+
+    it('the title isnt displayed when the image is in hover state', () => {
+      const compiled = fixture.debugElement.nativeElement;
+      expect(compiled.querySelector('h2')).toBeFalsy();
+    });
+  });
 
 });
 
