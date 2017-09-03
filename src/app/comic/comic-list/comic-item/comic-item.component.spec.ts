@@ -68,6 +68,28 @@ describe('ComicItemComponent', () => {
 
   });
 
+  describe('onMouseLeave', () => {
+
+        xit('onMouseLeave is called when a mouse leaves the element', () => {
+          let element = fixture.nativeElement;
+          let component = fixture.debugElement.children[0].componentInstance;
+          let spy = spyOn(component, 'onMouseLeave');
+          let imgEl = element.querySelector('.work-img');
+          let event = new Event('mouseleave');
+          imgEl.dispatchEvent(event);
+          expect(spy).toHaveBeenCalled();
+
+        });
+
+        it('returns the hover state to false when the mouse leaves', () => {
+          let component = fixture.debugElement.children[0].componentInstance;
+          component.onMouseEnter();
+          component.onMouseLeave();
+          expect(component.hover).toEqual(false);
+        });
+
+      });
+
 });
 
 @Component({

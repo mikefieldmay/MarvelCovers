@@ -15,8 +15,12 @@ export class ComicItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  onMouseEnter(){
+  onMouseEnter() {
     this.hover = true;
+  }
+
+  onMouseLeave() {
+    this.hover = false;
   }
 
 }
