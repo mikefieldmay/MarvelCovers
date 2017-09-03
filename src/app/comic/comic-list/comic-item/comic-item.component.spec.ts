@@ -24,18 +24,49 @@ describe('ComicItemComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should be created', () => {
-    expect(component).toBeTruthy();
+  describe('When created', () => {
+
+    it('should be created', () => {
+      expect(component).toBeTruthy();
+    });
+
+    it('has the property hover set to false', () => {
+      expect(component.hover).toBe(false);
+     });
+
+    it('should have a comic property', () => {
+      expect(component.comic).toBeTruthy();
+    });
+
+    it('should display comics', async(() => {
+      const compiled = fixture.debugElement.nativeElement;
+      expect(compiled.querySelector('img')).toBeTruthy();
+    }));
+
   });
 
-  it('should have a comic property', () => {
-    expect(component.comic).toBeTruthy();
-  });
 
-  it('should display comics', async(() => {
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('img')).toBeTruthy();
-  }));
+
+  describe('onMouseEnter', () => {
+
+    xit('onMouseEnter is called when a mouse hovers over element', () => {
+      let element = fixture.nativeElement;
+      let component = fixture.debugElement.children[0].componentInstance;;;
+      let spy = spyOn(component, 'onMouseEnter');
+      let imgEl = element.querySelector('.work-img');
+      let event = new Event('mouseenter');
+      imgEl.dispatchEvent(event);
+      expect(spy).toHaveBeenCalled();
+
+    });
+
+    it('turns the hover state to true', () => {
+      let component = fixture.debugElement.children[0].componentInstance;;;
+      component.onMouseEnter();
+      expect(component.hover).toEqual(true);
+    })
+
+  });
 
 });
 

@@ -8,10 +8,15 @@ import { Comic } from 'app/comic/comic.model';
 })
 export class ComicItemComponent implements OnInit {
   @Input() comic: Comic;
+  hover = false;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onMouseEnter(){
+    this.hover = true;
   }
 
 }
