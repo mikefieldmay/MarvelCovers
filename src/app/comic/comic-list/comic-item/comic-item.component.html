@@ -8,11 +8,17 @@
     <div class="hover-detail" *ngIf="hover">
       <h4>{{comic.title}}</h4>
       <br>
-      <p><strong>Creators: </strong> Author Name, Artist name</p>
-      <p><strong>Characters</strong> Matt Murdock, Captain America</p>
-      <span class="description">
-        <p><strong>Description: </strong> "It’s Halloween in the Marvel U! What does that mean for KATE BISHOP, A.K.A. HAWKEYE? Well, I can’t tell you here but I CAN guarantee it involves a haunted house, some witty one-liners, and a bad guy shot full of arrows… Then it’s time to give thanks for…THE PUNISHER?! When an op goes south, Frank Castle finds himself in a subterranean game of cat and mouse! It’s a life or death tale that’ll satisfy more than any turkey dinner!"</p>
+      <span *ngIf="comic.creators.length > 0">
+       <p><strong>Creators: </strong></p>
+       <p>{{comic.creators.join(', ')}}</p>
       </span>
+      <span *ngIf="comic.characters.length > 0">
+          <p><strong>Characters: </strong></p>
+          <p>{{comic.characters.join(', ')}}</p>
+      </span>
+
+      <p><strong>Description: </strong></p>
+      <div class="description"[innerHTML]="comic.description"></div>
       <br>
     </div>
   </div>

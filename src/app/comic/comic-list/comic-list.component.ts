@@ -16,8 +16,9 @@ export class ComicListComponent implements OnInit {
     this._dataService.getComics()
       .subscribe(
         (comics: Comic[]) => {
-          console.log(comics);
           this.comics = comics;
+          console.log(this.comics);
+
         }
       );
   }

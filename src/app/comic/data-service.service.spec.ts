@@ -21,12 +21,27 @@ describe('Data Service', () => {
     'title': 'Awesome Comic',
     'images': [{
       'path': 'imagePath'
-    }]};
+    }],
+     'characters': {
+      'items': [{'name': 'mike'}]
+      },
+      'creators': {
+        'items': [{'name': 'mike'}]
+        }
+    };
   let comicTwo = {
     'title': 'Mega Comic',
     'images': [{
       'path': 'imagePath'
-    }]};
+    }],
+    'description': 'Super great comic',
+    'characters': {
+      'items': [{'name': 'mike'}]
+      },
+      'creators': {
+        'items': [{'name': 'mike'}]
+        }
+    };
   let data = {
       data: {
       'results': [

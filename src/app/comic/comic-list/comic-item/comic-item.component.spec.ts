@@ -122,6 +122,6 @@ describe('ComicItemComponent', () => {
   template: '<app-comic-item [comic]="comic"></app-comic-item>'
 })
 class TestComponentWrapper {
-  comic = new Comic('Awesome Comic', 'imagePathUrl');
+  comic = new Comic('Awesome Comic', 'imagePathUrl', ['mike'], 'Awesome comic story', ['bob']);
 }
 

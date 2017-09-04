@@ -4,3 +4,11 @@ nav {
   margin-bottom: 20px;
   font-family: 'Oswald', sans-serif;
 }
+
+.footer {
+  min-height: 40px;
+  width: 100%;
+  color: white;
+  background-color: #f0141e;
+  font-family: 'Oswald', sans-serif;
+}
