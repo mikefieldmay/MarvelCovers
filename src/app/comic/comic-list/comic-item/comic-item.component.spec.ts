@@ -7,6 +7,7 @@ import { Comic } from 'app/comic/comic.model';
 describe('ComicItemComponent', () => {
   let component: ComicItemComponent;
   let fixture: ComponentFixture<TestComponentWrapper>;
+  let defaultOpacity = 1;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -34,6 +35,10 @@ describe('ComicItemComponent', () => {
       expect(component.hover).toBe(false);
      });
 
+     it('has a default coverOpacity', () => {
+      expect(component.coverOpacity).toBe(defaultOpacity);
+     });
+
     it('should have a comic property', () => {
       expect(component.comic).toBeTruthy();
     });
@@ -49,7 +54,6 @@ describe('ComicItemComponent', () => {
 
     xit('onMouseEnter is called when a mouse hovers over element', () => {
       let element = fixture.nativeElement;
-      let component = fixture.debugElement.children[0].componentInstance;;;
       let spy = spyOn(component, 'onMouseEnter');
       let imgEl = element.querySelector('.work-img');
       let event = new Event('mouseenter');
@@ -58,11 +62,15 @@ describe('ComicItemComponent', () => {
 
     });
 
-    it('turns the hover state to true', () => {
-      let component = fixture.debugElement.children[0].componentInstance;;;
+    it('changes the hover state to true', () => {
       component.onMouseEnter();
       expect(component.hover).toEqual(true);
-    })
+    });
+
+    it('changes the opacity', () => {
+      component.onMouseEnter();
+      expect(component.coverOpacity).not.toEqual(defaultOpacity);
+    });
 
   });
 
@@ -70,7 +78,6 @@ describe('ComicItemComponent', () => {
 
     xit('onMouseLeave is called when a mouse leaves the element', () => {
       let element = fixture.nativeElement;
-      let component = fixture.debugElement.children[0].componentInstance;
       let spy = spyOn(component, 'onMouseLeave');
       let imgEl = element.querySelector('.work-img');
       let event = new Event('mouseleave');
@@ -79,11 +86,16 @@ describe('ComicItemComponent', () => {
 
     });
 
-    it('returns the hover state to false when the mouse leaves', () => {
-      let component = fixture.debugElement.children[0].componentInstance;
+    it('changes the hover state to false', () => {
       component.onMouseEnter();
       component.onMouseLeave();
       expect(component.hover).toEqual(false);
+    });
+
+    it('returns the opacity to default', () => {
+      component.onMouseEnter();
+      component.onMouseLeave();
+      expect(component.coverOpacity).toEqual(defaultOpacity);
     });
 
   });
@@ -94,12 +106,12 @@ describe('ComicItemComponent', () => {
         const compiled = fixture.debugElement.nativeElement;
         component.hover = true;
         fixture.detectChanges();
-        expect(compiled.querySelector('h2')).toBeTruthy();
+        expect(compiled.querySelector('.hover-detail')).toBeTruthy();
     });
 
     it('the title isnt displayed when the image is in hover state', () => {
       const compiled = fixture.debugElement.nativeElement;
-      expect(compiled.querySelector('h2')).toBeFalsy();
+      expect(compiled.querySelector('.hover-detail')).toBeFalsy();
     });
   });
 

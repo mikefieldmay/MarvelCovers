@@ -9,6 +9,7 @@ import { Comic } from 'app/comic/comic.model';
 export class ComicItemComponent implements OnInit {
   @Input() comic: Comic;
   hover = false;
+  coverOpacity = 1;
 
   constructor() { }
 
@@ -17,10 +18,12 @@ export class ComicItemComponent implements OnInit {
 
   onMouseEnter() {
     this.hover = true;
+    this.coverOpacity = 0.4;
   }
 
   onMouseLeave() {
     this.hover = false;
+    this.coverOpacity = 1;
   }
 
 }

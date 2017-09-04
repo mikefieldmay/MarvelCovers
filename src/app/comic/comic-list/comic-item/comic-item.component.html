@@ -1,11 +1,12 @@
 <div class="card">
-  <div class="work-img"
+  <div class="work-img" style="background: #000"
     on-mouseover='onMouseEnter()'
     on-mouseleave='onMouseLeave()'>
     <img class="card-img-top img-fluid"
+      [ngStyle]="{'opacity': coverOpacity}"
       [src]="comic.imageUrl">
-    <div *ngIf="hover === true">
-      <h2>{{comic.title}}</h2>
+    <div class="hover-detail" *ngIf="hover === true">
+      <h4><strong>Title:</strong> {{comic.title}}</h4>
     </div>
   </div>
 </div>
