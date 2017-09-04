@@ -18,7 +18,7 @@ export class ComicItemComponent implements OnInit {
 
   onMouseEnter() {
     this.hover = true;
-    this.coverOpacity = 0.4;
+    this.coverOpacity = 0.3;
   }
 
   onMouseLeave() {
