@@ -5,8 +5,15 @@
     <img class="card-img-top img-fluid"
       [ngStyle]="{'opacity': coverOpacity}"
       [src]="comic.imageUrl">
-    <div class="hover-detail" *ngIf="hover === true">
-      <h4><strong>Title:</strong> {{comic.title}}</h4>
+    <div class="hover-detail" *ngIf="hover">
+      <h4>{{comic.title}}</h4>
+      <br>
+      <p><strong>Creators: </strong> Author Name, Artist name</p>
+      <p><strong>Characters</strong> Matt Murdock, Captain America</p>
+      <span class="description">
+        <p><strong>Description: </strong> "It’s Halloween in the Marvel U! What does that mean for KATE BISHOP, A.K.A. HAWKEYE? Well, I can’t tell you here but I CAN guarantee it involves a haunted house, some witty one-liners, and a bad guy shot full of arrows… Then it’s time to give thanks for…THE PUNISHER?! When an op goes south, Frank Castle finds himself in a subterranean game of cat and mouse! It’s a life or death tale that’ll satisfy more than any turkey dinner!"</p>
+      </span>
+      <br>
     </div>
   </div>
 </div>

@@ -1,16 +1,18 @@
-@media(min-width:1200px) {
-  img {
-   max-height: 720px
-  }
-  .card {
-   height: 757px
-  }
- }
+
 
  @media(min-width:992px) {
   img {
     max-height: 595px
    }
+ }
+
+ @media(min-width:1200px) {
+  img {
+   max-height: 757px
+  }
+  .card {
+   height: 757px
+  }
  }
 
  .card {
@@ -25,11 +27,15 @@
    position: relative;
  }
 
- h4 {
+ .hover-detail {
    position: absolute;
-   top: 20px;
+   top: 5%;
    left: 5%;
    width: 90%;
    color: white;
+ }
+
+ .description {
+  position: relative;
  }
 
